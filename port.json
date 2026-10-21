@@ -1,0 +1,28 @@
+{
+  "$schema": "https://living-code.dev/port.schema.json",
+  "schemaVersion": 1,
+  "name": "Rio",
+  "slug": "rio",
+  "group": "Terminals",
+  "emoji": "🏞️",
+  "description": "Living Code for Rio: native terminal palettes with all sixteen ANSI slots, cursor, selections, split dividers and search colors.",
+  "homepage": "https://rioterm.com",
+  "quick": "Install the native theme files",
+  "aliases": [
+    "rio terminal",
+    "rioterm"
+  ],
+  "flavors": [
+    "night",
+    "frost",
+    "paper",
+    "signal"
+  ],
+  "files": [
+    "themes/living-code-night.toml",
+    "themes/living-code-frost.toml",
+    "themes/living-code-paper.toml",
+    "themes/living-code-signal.toml"
+  ],
+  "images": []
+}
