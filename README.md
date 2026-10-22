@@ -7,27 +7,45 @@
 
 ## Previews
 
-Real application screenshots have not been captured yet.
+<table data-lc-flavors>
+<tr>
+<td width="50%" valign="top">
+<strong>Night</strong><br><sub>Dark · full palette</sub><br><br>
+<a href="images/night.png"><img src="images/night.png" alt="Rio running Living Code Night" width="640"></a>
+</td>
+<td width="50%" valign="top">
+<strong>Frost</strong><br><sub>Dark · softer chroma</sub><br><br>
+<a href="images/frost.png"><img src="images/frost.png" alt="Rio running Living Code Frost" width="640"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<strong>Paper</strong><br><sub>Light · near-white slate</sub><br><br>
+<a href="images/paper.png"><img src="images/paper.png" alt="Rio running Living Code Paper" width="640"></a>
+</td>
+<td width="50%" valign="top">
+<strong>Signal</strong><br><sub>Dark · teal accent</sub><br><br>
+<a href="images/signal.png"><img src="images/signal.png" alt="Rio running Living Code Signal" width="640"></a>
+</td>
+</tr>
+</table>
+
+Select any preview to view the image at full size.
 
 ## Installation
 
 ```sh
-git clone https://github.com/living-code-theme/rio.git
-cd rio
+flavor=night # night, frost, paper, or signal
+curl -fsSL --create-dirs -o "${RIO_CONFIG_HOME:-${XDG_CONFIG_HOME:-$HOME/.config}/rio}/themes/living-code-$flavor.toml" "https://raw.githubusercontent.com/living-code-theme/rio/main/themes/living-code-$flavor.toml"
 ```
 
-```sh
-mkdir -p "$HOME/.config/rio/themes"
-cp themes/*.toml "$HOME/.config/rio/themes/"
-```
-
-In your existing Rio `config.toml`, set the top-level theme name before any tables:
+In Rio’s existing `config.toml`, set the top-level theme name **before any tables**:
 
 ```toml
 theme = "living-code-night"
 ```
 
-Reload or restart Rio. If your Rio installation uses a custom configuration location, put the `themes/` folder alongside that config.
+Reload or restart Rio. The download honors `RIO_CONFIG_HOME` and the Linux XDG config location. If your platform uses another Rio config directory, put `themes/` beside its `config.toml`. Existing renderer, font and shell settings stay untouched.
 
 ## Flavors
 
@@ -36,7 +54,7 @@ Expand a flavor for its full-size preview and activation instructions.
 <details data-lc-flavor="night">
 <summary><strong>Night</strong> · Dark · full palette</summary>
 
-A real application capture is not available yet.
+<p><a href="images/night.png"><img src="images/night.png" alt="Rio running Living Code Night" width="1280"></a></p>
 
 Set the top-level `theme = "living-code-night"` in Rio’s config, then reload or restart Rio.
 
@@ -45,7 +63,7 @@ Set the top-level `theme = "living-code-night"` in Rio’s config, then reload o
 <details data-lc-flavor="frost">
 <summary><strong>Frost</strong> · Dark · softer chroma</summary>
 
-A real application capture is not available yet.
+<p><a href="images/frost.png"><img src="images/frost.png" alt="Rio running Living Code Frost" width="1280"></a></p>
 
 Set the top-level `theme = "living-code-frost"` in Rio’s config, then reload or restart Rio.
 
@@ -54,7 +72,7 @@ Set the top-level `theme = "living-code-frost"` in Rio’s config, then reload o
 <details data-lc-flavor="paper">
 <summary><strong>Paper</strong> · Light · near-white slate</summary>
 
-A real application capture is not available yet.
+<p><a href="images/paper.png"><img src="images/paper.png" alt="Rio running Living Code Paper" width="1280"></a></p>
 
 Set the top-level `theme = "living-code-paper"` in Rio’s config, then reload or restart Rio.
 
@@ -63,7 +81,7 @@ Set the top-level `theme = "living-code-paper"` in Rio’s config, then reload o
 <details data-lc-flavor="signal">
 <summary><strong>Signal</strong> · Dark · teal accent</summary>
 
-A real application capture is not available yet.
+<p><a href="images/signal.png"><img src="images/signal.png" alt="Rio running Living Code Signal" width="1280"></a></p>
 
 Set the top-level `theme = "living-code-signal"` in Rio’s config, then reload or restart Rio.
 
@@ -76,6 +94,8 @@ Each theme contains a native `[colors]` table. Rio names bright ANSI colors `lig
 ## Compatibility
 
 Verified against Rio’s native `Theme` and `Colors` structures at the pinned upstream revision. No terminal font, renderer, keybinding or shell setting is changed. These are static TOML themes and need no build tool at runtime. All ANSI slots are tested for order and exact agreement with the pinned palette.
+
+Previews are captured programmatically from the actual application in an isolated profile. See [`capture/app.py`](capture/app.py) for the app-owned recipe and [`images/capture.json`](images/capture.json) for runtime, palette and image provenance. No mock interface is drawn.
 
 ## Contributing
 

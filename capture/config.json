@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "scene": "Rio itself rendering the tiny project through the native shell; its own TOML theme is loaded.",
+  "versionCommand": [
+    "rio",
+    "--version"
+  ],
+  "fixtures": []
+}

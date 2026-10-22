@@ -1,0 +1,8 @@
+{
+  "downloads": [
+    {
+      "source": "themes/living-code-{flavor}.toml",
+      "destination": "{rio}/themes/living-code-{flavor}.toml"
+    }
+  ]
+}
